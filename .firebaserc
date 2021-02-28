@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "starter105-angular": {
+      "hosting": {
+        "starter105": [
+          "starter105-angular"
+        ]
+      }
+    }
+  }
+}

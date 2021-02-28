@@ -1,0 +1,21 @@
+<mat-card class="mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>{{topic.title}}</mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image src="{{topic.image ? topic.image : 'https://flexmanu.files.wordpress.com/2018/01/screen-shot-2018-02-17-at-11-26-22-pm.png'}}">
+  <mat-card-content>
+    <p>
+      {{ topic.description }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button (click)="editTopic(topic)">
+      <span class="material-icons">create</span>
+    </button>
+    <button mat-button (click)="deleteTopic(topic.id)">
+      <span class="material-icons">delete</span>
+    </button>
+  </mat-card-actions>
+</mat-card>
