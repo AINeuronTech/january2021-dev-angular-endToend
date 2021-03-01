@@ -1,0 +1,22 @@
+<div class="signin-container">
+  <h1>Welcome, SignIn to Angularland!</h1>
+  <div class="signin-forms">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput placeholder="password" [formControl]="password" required>
+      <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="onSignIn()">SignIn</button>
+    <button mat-stroked-button color="accent" (click)="onSignUp()">SignUp</button>
+  </div>
+</div>
+
+
+

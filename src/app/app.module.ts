@@ -3,28 +3,44 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopnavComponent } from './topnav/topnav.component';
 import { AppMaterialModule } from './app-material.module';
 import { TopicComponent } from './topic/topic.component';
 import { TopicDialogComponent } from './topic-dialog/topic-dialog.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { CoursesComponent } from './courses/courses.component';
+import { InterviewQuestionsComponent } from './interview-questions/interview-questions.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { HomeComponent } from './home/home.component';
+import { MyCourseComponent } from './my-course/my-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopnavComponent,
     TopicComponent,
-    TopicDialogComponent
+    TopicDialogComponent,
+    SigninComponent,
+    SignupComponent,
+    NotFoundComponent,
+    CoursesComponent,
+    InterviewQuestionsComponent,
+    CourseDetailComponent,
+    HomeComponent,
+    MyCourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
-    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    //AngularFireAuth,
     AngularFirestoreModule
   ],
   providers: [],

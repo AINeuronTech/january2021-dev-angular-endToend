@@ -1,0 +1,26 @@
+<mat-vertical-stepper #stepper>
+  <mat-step>
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores non laudantium, repellendus porro provident maiores dolores. Eveniet, autem ipsa quibusdam ad quos aliquam consequuntur modi doloribus nostrum quisquam. Quas officiis sapiente laboriosam id animi sequi eum, dolorum voluptatibus iste minus incidunt nam, nostrum recusandae adipisci molestias nobis, consequatur reiciendis quibusdam veniam eaque blanditiis quam consequuntur cum! Sit laboriosam molestiae nostrum deleniti voluptates consequuntur laudantium alias labore velit. Aperiam, in corporis at porro ea tenetur officiis, rem voluptatem consectetur, quas neque sequi? Hic, esse? Aspernatur quisquam similique omnis dicta. Excepturi est nihil voluptate modi quia qui voluptatum aperiam. Ipsam deleniti blanditiis quos quis architecto non earum quo necessitatibus numquam, repellendus culpa voluptates cum id ea dolores aliquid accusantium dolorum ipsum beatae assumenda? Aliquid officiis doloremque et ratione saepe, fugit maxime voluptatum soluta harum vel ullam blanditiis vitae culpa earum commodi eveniet, nihil quis cum natus! Autem numquam illum cupiditate commodi facere illo dolore, dolor excepturi! Amet, earum aut! Ullam eligendi error voluptatum corporis, eum blanditiis enim hic iure porro cumque? Alias, quaerat accusamus facere quam minus nulla quibusdam harum aperiam corporis. Dolorem exercitationem ipsum ducimus fuga earum? Quia, placeat debitis commodi fugiat rerum, veniam magni adipisci eum repellat dolores atque iusto!
+      </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+  </mat-step>
+  <mat-step *ngFor="let question of [1,2,3,4,5,6,7,8,9,10]">
+      <ng-template matStepLabel>{{ question }}</ng-template>
+      <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi repellat iure tempore! Iste ipsum aspernatur id rem fuga veniam ducimus voluptatem pariatur doloribus. Non fuga sunt dicta. Iusto praesentium at, voluptates necessitatibus quos itaque exercitationem repellendus veritatis neque laudantium laborum in ullam pariatur quas, autem sit similique mollitia debitis optio vero temporibus voluptatem odit. Voluptas eum aliquam rem nesciunt repudiandae at veritatis perferendis sit necessitatibus vitae esse nobis eos, cum fuga beatae repellat! Distinctio fugiat sint at ipsum hic aspernatur, quisquam reprehenderit voluptates non corrupti consectetur, molestias ipsam. Accusantium facilis at doloremque voluptatibus fugit similique quam in earum dolores nam aspernatur, sed quibusdam deserunt vero! Asperiores architecto rem maiores sapiente excepturi doloribus optio tenetur sunt iusto earum aliquid nihil at quis voluptatem recusandae officia consequuntur sed praesentium, ipsam dolor iure numquam? Fugiat voluptas aliquam molestiae natus ratione laboriosam placeat accusamus neque facere consequatur, sed non, a maxime alias soluta. Quasi unde blanditiis sapiente numquam eius aspernatur beatae similique dolores commodi, temporibus quos culpa consequuntur enim distinctio porro architecto a voluptates modi. Corrupti asperiores iste fuga velit harum quaerat, eaque recusandae architecto officia voluptas, doloribus nesciunt rerum, adipisci corporis quidem perspiciatis placeat et ut? Perferendis aspernatur officia esse inventore dicta necessitatibus.</div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>

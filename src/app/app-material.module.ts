@@ -5,9 +5,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [],
@@ -17,20 +20,28 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
+    ReactiveFormsModule,
     FormsModule,
+    MatFormFieldModule,
     MatInputModule,
     CommonModule,
     FlexLayoutModule,
+    MatStepperModule,
+    BrowserAnimationsModule,
   ],
   exports: [
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
     MatDialogModule,
-    FormsModule,
+    MatFormFieldModule,
     MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatButtonModule,
     FlexLayoutModule,
+    MatStepperModule,
+    BrowserAnimationsModule,
   ],
 })
 export class AppMaterialModule {}

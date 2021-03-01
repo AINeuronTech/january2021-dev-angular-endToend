@@ -1,4 +1,11 @@
 <mat-toolbar color="primary">
-  <mat-icon>home</mat-icon>
-  <span>GoTeam!</span>
+  <a mat-button routerLink="/" routerLinkActive="active"><mat-icon>offline_bolt</mat-icon>GoTeam!</a>
+  <div class="spacer"></div>
+  <span>
+    <a mat-button routerLink="/courses" routerLinkActive="active">Courses</a>
+    <a mat-button routerLink="/questions" routerLinkActive="active">Q&A</a>
+    <a mat-button routerLink="/my-course" routerLinkActive="active">MyCourse</a>
+    <a mat-button routerLink="/signin" routerLinkActive="active">SignIn</a>
+    <a mat-button routerLink="/signup" routerLinkActive="active">SignUp</a>
+  </span>
 </mat-toolbar>

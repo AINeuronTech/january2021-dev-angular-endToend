@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.signup-container {
+  width: 400px;
+  height: 300px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: darkslategrey;
+}
+
+h1 {
+  color: azure;
+  margin-bottom: 30px;
+}
+
+.signup-forms {
+  margin-left: 100px;
+}
+
+button {
+  margin: 12px;
+}
+
+
