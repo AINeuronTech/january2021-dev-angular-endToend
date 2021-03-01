@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-signin',
@@ -16,9 +17,33 @@ export class SigninComponent implements OnInit {
     ),
   ]);
 
-  constructor(private _route: Router) {}
+  isSignedIn = false;
 
-  ngOnInit(): void {}
+  constructor(
+    private firebaseService: AuthenticationService,
+    private _route: Router
+  ) {}
+
+  ngOnInit(): void {
+    if (localStorage.getItem('user') !== null) {
+      this.isSignedIn = true;
+    } else {
+      this.isSignedIn = false;
+    }
+  }
+
+  async onSignIn(email: string, password: string) {
+    await this.firebaseService.signin(email, password);
+    if (this.firebaseService.isAuthenticated) {
+      this.isSignedIn = true;
+      return this._route.navigate(['/my-courses']);
+    }
+    return this._route.navigate(['/signup']);
+  }
+
+  onSignUp() {
+    return this._route.navigate(['/my-courses']);
+  }
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -36,19 +61,5 @@ export class SigninComponent implements OnInit {
       return 'You must enter a valid password';
     }
     return '';
-  }
-
-  onSignIn() {
-    if (
-      this.email.value === 'test@gmail.com' &&
-      this.password.value === 'Test123$'
-    ) {
-      return this._route.navigate(['/my-course']);
-    }
-    return this._route.navigate(['/signup']);
-  }
-
-  onSignUp() {
-    return this._route.navigate(['/signup']);
   }
 }

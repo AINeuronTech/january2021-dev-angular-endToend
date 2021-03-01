@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-topnav',
   templateUrl: './topnav.component.html',
-  styleUrls: ['./topnav.component.scss']
+  styleUrls: ['./topnav.component.scss'],
 })
-export class TopnavComponent implements OnInit {
+export class TopnavComponent {
+  constructor(
+    public authService: AuthenticationService,
+    private _route: Router
+  ) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  async onSignOut() {
+    await this.authService.signout();
+    this._route.navigate(['/']);
   }
-
 }

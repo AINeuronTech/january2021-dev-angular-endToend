@@ -9,7 +9,6 @@ import { TopicComponent } from './topic/topic.component';
 import { TopicDialogComponent } from './topic-dialog/topic-dialog.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -18,7 +17,8 @@ import { CoursesComponent } from './courses/courses.component';
 import { InterviewQuestionsComponent } from './interview-questions/interview-questions.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { HomeComponent } from './home/home.component';
-import { MyCourseComponent } from './my-course/my-course.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { TopicContainerComponent } from './topic-container/topic-container.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +33,14 @@ import { MyCourseComponent } from './my-course/my-course.component';
     InterviewQuestionsComponent,
     CourseDetailComponent,
     HomeComponent,
-    MyCourseComponent
+    MyCoursesComponent,
+    TopicContainerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    //AngularFireAuth,
     AngularFirestoreModule
   ],
   providers: [],

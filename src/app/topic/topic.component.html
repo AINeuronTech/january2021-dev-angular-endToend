@@ -10,7 +10,7 @@
     </p>
   </mat-card-content>
 
-  <mat-card-actions>
+  <mat-card-actions *ngIf="isSignedIn">
     <button mat-button (click)="editTopic(topic)">
       <span class="material-icons">create</span>
     </button>

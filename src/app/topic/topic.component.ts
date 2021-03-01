@@ -11,12 +11,14 @@ import { TopicsService } from '../topics.service';
 })
 export class TopicComponent implements OnInit {
   @Input() topic: ITopic;
+  @Input() isSignedIn: boolean;
 
   constructor(
     private _dialog: MatDialog,
     private _topicsService: TopicsService
   ) {
     this.topic = { title: '', description: '' };
+    this.isSignedIn = false;
   }
 
   ngOnInit(): void {}

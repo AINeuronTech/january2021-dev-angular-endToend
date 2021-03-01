@@ -11,12 +11,7 @@
       <input matInput placeholder="password" [formControl]="password" required>
       <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
     </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Confirm password</mat-label>
-      <input matInput placeholder="confirmPassword" [formControl]="confirmPassword" required>
-      <mat-error *ngIf="confirmPassword.invalid">{{getPasswordErrorMessage()}}</mat-error>
-    </mat-form-field>
   </div>
-  <button mat-raised-button color="primary" (click)="onSignUp()">SignUp</button>
+  <button mat-raised-button color="primary" (click)="onSignUp(email.value, password.value)">SignUp</button>
 </div>
 

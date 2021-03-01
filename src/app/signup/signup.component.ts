@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,16 +16,30 @@ export class SignupComponent implements OnInit {
       '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
     ),
   ]);
-  confirmPassword = new FormControl('', [
-    Validators.required,
-    Validators.pattern(
-      '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
-    ),
-  ]);
 
-  constructor(private _route: Router) {}
+  isSignedIn = false;
 
-  ngOnInit(): void {}
+  constructor(
+    private firebaseService: AuthenticationService,
+    private _route: Router
+  ) {}
+
+  ngOnInit(): void {
+    if (localStorage.getItem('user') !== null) {
+      this.isSignedIn = true;
+    } else {
+      this.isSignedIn = false;
+    }
+  }
+
+  async onSignUp(email: string, password: string) {
+    await this.firebaseService.signup(email, password);
+    if (this.firebaseService.isAuthenticated) {
+      this.isSignedIn = true;
+      return this._route.navigate(['/my-courses']);
+    }
+    return;
+  }
 
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -42,15 +57,5 @@ export class SignupComponent implements OnInit {
       return 'You must enter a valid password';
     }
     return '';
-  }
-
-  onSignUp() {
-    if (
-      this.email.value === 'test@gmail.com' &&
-      this.password.value === 'Test123$'
-    ) {
-      return this._route.navigate(['/my-course']);
-    }
-    return this._route.navigate(['/signup']);
   }
 }

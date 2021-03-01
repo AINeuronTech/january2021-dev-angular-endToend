@@ -6,10 +6,11 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
 import { InterviewQuestionsComponent } from './interview-questions/interview-questions.component';
-import { MyCourseComponent } from './my-course/my-course.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { TopicContainerComponent } from './topic-container/topic-container.component';
 
 const routes: Routes = [
   {
@@ -17,16 +18,16 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'courses',
-    component: CoursesComponent,
+    path: 'topics',
+    component: TopicContainerComponent,
   },
   {
-    path: 'my-course',
-    component: MyCourseComponent,
+    path: 'my-courses',
+    component: MyCoursesComponent,
     canActivate: [AuthGuard],
   },
   {
-    path: 'courses/:courseId',
+    path: 'my-courses/:courseId',
     component: CourseDetailComponent,
   },
   {
