@@ -1,14 +1,14 @@
-<mat-toolbar color="primary">
-  <a mat-button routerLink="/" routerLinkActive="active"><mat-icon>offline_bolt</mat-icon>GoTeam!</a>
+<mat-toolbar color="accent">
+  <a mat-button routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><mat-icon>offline_bolt</mat-icon>GoTeam!</a>
   <div class="spacer"></div>
   <span>
-    <a mat-button routerLink="/topics" routerLinkActive="active">Learning</a>
-    <a mat-button routerLink="/questions" routerLinkActive="active">Q&A</a>
-    <a mat-button routerLink="/my-courses" routerLinkActive="active">MyCourses</a>
+    <a mat-button routerLink="topics" routerLinkActive="active">Learning</a>
+    <a mat-button routerLink="questions" routerLinkActive="active">Q&A</a>
+    <a mat-button routerLink="my-courses" routerLinkActive="active">MyCourses</a>
     <span *ngIf="!this.authService.signedIn()">
-      <a mat-button routerLink="/signin" routerLinkActive="active">SignIn</a>
-      <a mat-button routerLink="/signup" routerLinkActive="active">SignUp</a>
+      <a mat-button routerLink="signin" routerLinkActive="active">SignIn</a>
+      <a mat-button routerLink="signup" routerLinkActive="active">SignUp</a>
     </span>
-    <a *ngIf="this.authService.signedIn()" mat-button routerLink="/" routerLinkActive="active" (click)="onSignOut()">SignOut</a>
+    <a *ngIf="this.authService.signedIn()" mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onSignOut()">SignOut</a>
   </span>
 </mat-toolbar>
