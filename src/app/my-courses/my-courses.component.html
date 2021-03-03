@@ -1,1 +1,10 @@
-<p class="content">my-courses works!</p>
+<div class="courses-container">
+  <h2>Start tracking your Progress! </h2>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <app-course fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutAlign="start start" *ngFor="let course of coursesList"
+        [course]="course"
+        [displayUnsubscribe]="true"
+        (unSubscribeCourse)="onUnSubscribeCourse($event)">
+      </app-course>
+    </div>
+</div>

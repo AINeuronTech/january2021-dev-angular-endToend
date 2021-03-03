@@ -1,5 +1,17 @@
 <div class="content">
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, maxime? Accusamus quo ipsum soluta amet illum? Nam quibusdam sequi est blanditiis! Velit aperiam tempora corporis quisquam cupiditate, temporibus iure praesentium.
+  <img src="./../../assets/images/frontend.png">
+
+  <div class="courses-container">
+    <h2>Build your career and improve your skills!</h2>
+    <h3>Feel free to subscribe </h3>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <app-course fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutAlign="start start" *ngFor="let course of coursesList"
+        [course]="course"
+        [displayUnsubscribe]="false"
+        (subscribeNewCourse)="onSubscribeNewCourse($event)">
+      </app-course>
+    </div>
+  </div>
 </div>
 
 

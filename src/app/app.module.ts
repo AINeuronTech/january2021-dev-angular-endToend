@@ -13,12 +13,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { CoursesComponent } from './courses/courses.component';
 import { InterviewQuestionsComponent } from './interview-questions/interview-questions.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { HomeComponent } from './home/home.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { TopicContainerComponent } from './topic-container/topic-container.component';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +29,12 @@ import { TopicContainerComponent } from './topic-container/topic-container.compo
     SigninComponent,
     SignupComponent,
     NotFoundComponent,
-    CoursesComponent,
     InterviewQuestionsComponent,
     CourseDetailComponent,
     HomeComponent,
     MyCoursesComponent,
-    TopicContainerComponent
+    TopicContainerComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,

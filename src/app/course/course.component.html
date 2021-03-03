@@ -1,0 +1,17 @@
+<mat-card class="mat-elevation-z4">
+  <mat-card-header>
+    <mat-card-title>{{course.title}}</mat-card-title>
+  </mat-card-header>
+
+  <img mat-card-image src="{{course.imageUrl ? course.imageUrl : 'https://flexmanu.files.wordpress.com/2018/01/screen-shot-2018-02-17-at-11-26-22-pm.png'}}">
+  <mat-card-content>
+    <p>
+      {{ course.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <span>Between {{course.startDate.toDate() | date: 'mediumDate'}} to {{course.endDate.toDate() | date: 'mediumDate'}}</span>
+    <button *ngIf="!displayUnsubscribe" mat-flat-button color="accent" (click)="subscribeNewCourse.emit(course)">Subscribe</button>
+    <button *ngIf="displayUnsubscribe" mat-flat-button color="accent" (click)="unSubscribeCourse.emit(course)">Unsubscribe</button>
+  </mat-card-actions>
+</mat-card>

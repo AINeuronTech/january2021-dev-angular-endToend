@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { AuthGuard } from './auth.guard';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
-import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
 import { InterviewQuestionsComponent } from './interview-questions/interview-questions.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
