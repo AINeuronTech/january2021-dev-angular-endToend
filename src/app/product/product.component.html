@@ -19,7 +19,7 @@
         <span class="material-icons increment" (click)="increment()">add_circle</span>
         <span *ngIf="currentCounter > 0" class="material-icons decrement" (click)="decrement()">remove_circle</span>
       </div>
-      <button mat-flat-button color="accent" (click)="addToCart()">Add to Cart</button>
+      <button mat-flat-button color="accent" (click)="addToCart(product)">Add to Cart</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>

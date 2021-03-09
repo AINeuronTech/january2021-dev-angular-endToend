@@ -21,6 +21,11 @@ import { TopicContainerComponent } from './topic-container/topic-container.compo
 import { CourseComponent } from './course/course.component';
 import { ProductComponent } from './product/product.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { ProductsEffects } from './state/effects/products.effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ProductsReducer } from './state/reducers/products.reducer';
 
 @NgModule({
   declarations: [
@@ -38,16 +43,27 @@ import { CheckoutComponent } from './checkout/checkout.component';
     TopicContainerComponent,
     CourseComponent,
     ProductComponent,
-    CheckoutComponent
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
+    StoreModule.forRoot(
+      {
+        data: ProductsReducer,
+      },
+      {}
+    ),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot([ProductsEffects]),
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
