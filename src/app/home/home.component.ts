@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../course.service';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,16 @@ import { CourseService } from '../course.service';
 })
 export class HomeComponent implements OnInit {
   coursesList: any;
-  constructor(private _coursesService: CourseService) {}
+  productsList: any;
+
+  constructor(
+    private _coursesService: CourseService,
+    private _productService: ProductsService
+  ) {}
 
   ngOnInit(): void {
     this.getCourses();
+    this.getProducts();
   }
 
   getCourses(): void {
@@ -20,6 +27,17 @@ export class HomeComponent implements OnInit {
         return {
           ...(course.payload.doc.data() as {}),
           id: course.payload.doc.id,
+        };
+      });
+    });
+  }
+
+  getProducts(): void {
+    this._productService.getProducts().subscribe((res) => {
+      this.productsList = res.map((product) => {
+        return {
+          ...(product.payload.doc.data() as {}),
+          id: product.payload.doc.id,
         };
       });
     });

@@ -8,6 +8,7 @@ import { AuthenticationService } from '../authentication.service';
   styleUrls: ['./topnav.component.scss'],
 })
 export class TopnavComponent {
+  items = 5;
   constructor(
     public authService: AuthenticationService,
     private _route: Router
