@@ -20,7 +20,6 @@ export class TopnavComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    debugger
     this.itemsCount$ = this.store.select(getItemCount);
   }
 

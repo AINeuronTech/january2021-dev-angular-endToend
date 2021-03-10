@@ -15,7 +15,7 @@ export class AddProductAction implements Action {
 
 export class DeleteProductAction implements Action {
   readonly type = ProductActionTypes.DELETE_PRODUCT;
-  constructor(public payload: number) {}
+  constructor(public payload: string) {}
 }
 
 export type ProductAction = AddProductAction | DeleteProductAction

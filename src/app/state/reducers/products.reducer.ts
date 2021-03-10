@@ -3,6 +3,7 @@ import {
   ProductAction,
 } from '../actions/products.actions';
 import { IProductPayload } from '../../models/interfaces';
+import { act } from '@ngrx/effects';
 
 export interface AppState {
   data: ProductsState;
@@ -28,7 +29,9 @@ export function ProductsReducer(
       };
     case ProductActionTypes.DELETE_PRODUCT:
       let updatedProducts = [...state.products];
-      updatedProducts.splice(action.payload, 1);
+      updatedProducts.filter(product => {
+       return product.title.toLowerCase().indexOf(action.payload.toLowerCase()) < 0;
+      })
       return {
         ...state,
         products: updatedProducts,
