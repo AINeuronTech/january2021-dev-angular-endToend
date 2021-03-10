@@ -1,0 +1,25 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header collapsedHeight="250px" expandedHeight="370px">
+      <mat-panel-title>
+        <div class="product-title">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.summary }}</p>
+          <h4><span class="material-icons">attach_money</span>{{ product.price }}</h4>
+        </div>
+      </mat-panel-title>
+      <mat-panel-description>
+        <img src="{{ product.imageUrl }}">
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{ product.description }}</p>
+    <mat-action-row>
+      <div class="icon-container" mat-button>Qty:
+        <span class="counter">{{ currentCounter }}</span>
+        <span class="material-icons increment" (click)="increment()">add_circle</span>
+        <span *ngIf="currentCounter > 0" class="material-icons decrement" (click)="decrement()">remove_circle</span>
+      </div>
+      <button mat-flat-button color="accent" (click)="addToCart(product)">Add to Cart</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

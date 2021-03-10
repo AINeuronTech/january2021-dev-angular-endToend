@@ -1,0 +1,22 @@
+<div *ngIf="(shoppingCart$ | async) as items">
+  <div class="shopping-cart">
+    <table>
+    <tr>
+      <th>Item Name</th>
+      <th>Price</th>
+      <th>Qty</th>
+      <th>Total Price</th>
+      <th>Remove Item</th>
+    </tr>
+    <tr *ngFor="let item of items">
+      <td>{{ item.itemName }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.qty }}</td>
+      <td>{{ item.totalPrice }}</td>
+      <td><button mat-button color="warn" (click)="removeItem(item.itemName)">
+        <span class="material-icons">remove_shopping_cart</span>Remove
+      </button></td>
+    </tr>
+  </table>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.product-title {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  height: 220px;
+  object-fit: cover;
+}
+
+h4 {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+  font-size: 40px;
+  align-items: center;
+}
+
+.counter {
+  padding-left: 12px;
+  padding-right: 10px;
+}
+
+.increment,
+.decrement {
+  padding: 6px;
+  font-size: 40px;
+}

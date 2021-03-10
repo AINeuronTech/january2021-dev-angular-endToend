@@ -11,6 +11,13 @@
         (subscribeNewCourse)="onSubscribeNewCourse($event)">
       </app-course>
     </div>
+
+      <h2>Buy your favorite programming book from here!</h2>
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <app-product fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" fxLayoutAlign="start start" *ngFor="let product of productsList"
+        [product]="product">
+      </app-product>
+    </div>
   </div>
 </div>
 

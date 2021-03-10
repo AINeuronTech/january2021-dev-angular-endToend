@@ -10,5 +10,10 @@
       <a mat-button routerLink="signup" routerLinkActive="active">SignUp</a>
     </span>
     <a *ngIf="this.authService.signedIn()" mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onSignOut()">SignOut</a>
+    <div *ngIf="(itemsCount$ | async) as itemsCount">
+      <a *ngIf="itemsCount > 0" mat-flat-button routerLink="checkout" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" color="warn">
+        Checkout <span class="material-icons">shopping_cart</span> {{ itemsCount }}
+      </a>
+    </div>
   </span>
 </mat-toolbar>

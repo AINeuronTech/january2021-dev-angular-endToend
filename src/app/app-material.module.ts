@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     CommonModule,
     FlexLayoutModule,
     MatStepperModule,
+    MatExpansionModule,
     BrowserAnimationsModule,
   ],
   exports: [
@@ -41,6 +43,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatButtonModule,
     FlexLayoutModule,
     MatStepperModule,
+    MatExpansionModule,
     BrowserAnimationsModule,
   ],
 })
